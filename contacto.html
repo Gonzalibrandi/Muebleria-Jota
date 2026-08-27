@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hermanos Jota | Contacto</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="logo" aria-label="Hermanos Jota — Inicio">
+        <img src="img/logo.svg" alt="Hermanos Jota" width="120" height="120" />
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Catálogo</a></li>
+          <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="cart-widget" aria-live="polite">
+        <span>Carrito</span>
+        <span id="cart-count">0</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="contact" aria-labelledby="contact-title">
+        <h1 id="contact-title">Contacto</h1>
+
+        <form id="contact-form" novalidate>
+          <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Enviar</button>
+        </form>
+
+        <!-- JS: mensaje de éxito / errores de validación -->
+        <div id="form-feedback" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Hermanos Jota Casa Taller — Av. San Juan 2847, San Cristóbal, CABA</p>
+      <p>info@hermanosjota.com.ar · +54 11 4567-8900</p>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contacto.js"></script>
+  </body>
+</html>

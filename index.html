@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hermanos Jota | Inicio</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="logo" aria-label="Hermanos Jota — Inicio">
+        <img src="img/logo.svg" alt="Hermanos Jota" width="120" height="120" />
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="productos.html">Catálogo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="cart-widget" aria-live="polite">
+        <span>Carrito</span>
+        <span id="cart-count">0</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Hermanos Jota</h1>
+        <p><!-- TODO: copy del hero --></p>
+        <a href="productos.html" class="btn">Ver catálogo</a>
+      </section>
+
+      <section class="featured" aria-labelledby="featured-title">
+        <h2 id="featured-title">Productos destacados</h2>
+        <!-- JS: renderizar 3–4 productos destacados -->
+        <div id="featured-products" class="product-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Hermanos Jota Casa Taller — Av. San Juan 2847, San Cristóbal, CABA</p>
+      <p>info@hermanosjota.com.ar · +54 11 4567-8900</p>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>

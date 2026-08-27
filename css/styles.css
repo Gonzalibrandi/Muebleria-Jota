@@ -1,0 +1,88 @@
+/* Hermanos Jota — estilos (Mobile First + Flexbox)
+   Paleta: Siena Tostado, Verde Salvia, Alabastro Cálido, Vara de Oro, Rosa Polvoriento
+*/
+
+:root {
+  --siena: #a0522d;
+  --salvia: #87a96b;
+  --alabastro: #f5e6d3;
+  --oro: #d4a437;
+  --rosa: #c47a6d;
+  --texto: #2b2118;
+  --fuente-cuerpo: Inter, system-ui, sans-serif;
+  --fuente-titulo: "Playfair Display", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-cuerpo);
+  background-color: var(--alabastro);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Header / Nav / Carrito --- */
+.site-header {
+  display: flex;
+  /* TODO: alinear logo, nav y contador */
+}
+
+.site-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-widget {
+  /* TODO */
+}
+
+/* --- Hero --- */
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Grilla de productos --- */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* --- Footer --- */
+.site-footer {
+  /* TODO */
+}
+
+/* --- Contacto --- */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Botones --- */
+.btn {
+  /* TODO */
+}
+
+/* --- Tablet --- */
+@media (min-width: 768px) {
+  /* TODO */
+}
+
+/* --- Desktop --- */
+@media (min-width: 1024px) {
+  /* TODO */
+}
