@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hermanos Jota | Catálogo</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <header class="site-header"></header>
 
-    <main>
-      <section class="catalog" aria-labelledby="catalog-title">
-        <h1 id="catalog-title">Catálogo</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hermanos Jota | Catálogo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
 
-        <!-- Bonus: búsqueda -->
-        <form id="search-form" role="search">
-          <label for="search-input">Buscar productos</label>
-          <input type="search" id="search-input" name="q" autocomplete="off" />
-        </form>
+<body>
+  <header class="site-header"></header>
 
-        <!-- JS: renderizar grilla de tarjetas -->
-        <div id="product-list" class="product-grid"></div>
-      </section>
-    </main>
+  <main>
+    <section class="catalog" aria-labelledby="catalog-title">
+      <h1 id="catalog-title">Catálogo</h1>
 
-    <footer class="site-footer"></footer>
+      <!-- Bonus: búsqueda -->
+      <form id="search-form" role="search" class="search-form">
+        <label for="search-input" class="visually-hidden">Buscar productos</label>
+        <input type="search" id="search-input" name="q" autocomplete="off"
+          placeholder="Buscar productos por nombre..." />
+      </form>
 
-    <script src="js/productos.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/catalogo.js"></script>
-  </body>
+      <!-- JS: renderizar grilla de tarjetas -->
+      <div id="product-list" class="product-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"></footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+
 </html>

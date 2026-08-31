@@ -148,3 +148,7 @@ const PRODUCTOS = [
     destacado: false
   }
 ];
+
+function obtenerProductos() {
+  return PRODUCTOS;
+}
