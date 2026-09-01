@@ -32,7 +32,7 @@ function renderizarLayout() {
   if (header) {
     header.innerHTML = `
       <a href="index.html" class="logo" aria-label="Hermanos Jota — Inicio">
-        <img src="img/logo.svg" alt="Hermanos Jota" width="120" height="120" />
+        <img src="img/logo.svg" alt="Hermanos Jota" width="120" />
       </a>
       <nav class="site-nav" aria-label="Principal">
         <ul>
@@ -57,8 +57,32 @@ function renderizarLayout() {
 
   if (footer) {
     footer.innerHTML = `
-      <p>Hermanos Jota Casa Taller — Av. San Juan 2847, San Cristóbal, CABA</p>
-      <p>info@hermanosjota.com.ar · +54 11 4567-8900</p>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Showroom y Taller</h4>
+          <p>Hermanos Jota — Casa Taller</p>
+          <p>Av. San Juan 2847</p>
+          <p>C1232AAB — Barrio de San Cristóbal</p>
+          <p>Ciudad Autónoma de Buenos Aires, Argentina</p>
+        </div>
+        <div class="footer-col">
+          <h4>Horarios</h4>
+          <p>Lunes a Viernes: 10:00 - 19:00</p>
+          <p>Sábados: 10:00 - 14:00</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto Digital</h4>
+          <p><span class="material-icons">language</span> <a href="https://www.hermanosjota.com.ar" target="_blank">www.hermanosjota.com.ar</a></p>
+          <p><span class="material-icons">email</span> <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
+          <p><span class="material-icons">shopping_bag</span> <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></p>
+          <p><span class="material-icons">camera_alt</span> <a href="https://instagram.com/hermanosjota_ba" target="_blank">@hermanosjota_ba</a></p>
+          <p><span class="material-icons">chat</span> <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+        <p>Este sitio es propiedad de Hermanos Jota Muebles.</p>
+      </div>
     `;
   }
 }
