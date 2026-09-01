@@ -428,14 +428,212 @@ img {
 }
 
 /* --- Contacto --- */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.contact-section {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.contact-header {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: var(--alabastro);
+  border-bottom: 1px solid rgba(160, 82, 45, 0.1);
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contact-header p {
+  font-family: var(--fuente-cuerpo);
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.contact-info {
+  padding: 3rem 2rem;
+  background-color: var(--siena);
+  color: var(--alabastro);
+}
+
+.contact-info h2 {
+  color: var(--oro);
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.contact-info > p {
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+.info-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-group .material-icons {
+  color: var(--oro);
+  font-size: 1.5rem;
+  margin-top: 2px;
+}
+
+.info-group strong {
+  display: block;
+  font-family: var(--fuente-titulo);
+  color: var(--oro);
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.info-group p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.info-group a {
+  color: var(--alabastro);
+  transition: color 0.3s ease;
+}
+
+.info-group a:hover {
+  color: var(--oro);
+}
+
+.contact-form-container {
+  padding: 3rem 2rem;
+  background-color: #fff;
+}
+
 #contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
   display: flex;
   flex-direction: column;
 }
 
+.form-group label {
+  font-family: var(--fuente-titulo);
+  color: var(--siena);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: var(--fuente-cuerpo);
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--siena);
+  box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.1);
+  background-color: #fff;
+}
+
+.error-msg {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  min-height: 1.2rem;
+}
+
+/* Feedback Messages */
+#form-feedback {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 500;
+  display: none;
+}
+
+#form-feedback.exito {
+  display: block;
+  background-color: rgba(135, 169, 107, 0.1);
+  color: #2e5c2e;
+  border: 1px solid var(--salvia);
+}
+
+#form-feedback.error {
+  display: block;
+  background-color: rgba(211, 47, 47, 0.1);
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+}
+
 /* --- Botones --- */
 .btn {
-  /* TODO */
+  font-family: var(--fuente-cuerpo);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 15px 30px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--siena);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--texto);
+  color: #fff;
+}
+
+/* Hero Btn overrides (optional but good for consistency) */
+.hero .btn {
+  background-color: var(--siena);
+  color: #fff;
+  align-self: flex-start;
+  margin-top: 1.5rem;
+}
+
+.hero .btn:hover {
+  background-color: var(--texto);
 }
 
 /* --- Tablet --- */
@@ -467,7 +665,9 @@ img {
 
 /* --- Desktop --- */
 @media (min-width: 1024px) {
-  /* TODO */
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* --- Detalle de Producto --- */
