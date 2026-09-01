@@ -12,15 +12,26 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Hermanos Jota</h1>
-        <p><!-- TODO: copy del hero --></p>
-        <a href="productos.html" class="btn">Ver catálogo</a>
+        <div class="hero-content">
+          <h1 id="hero-title">El redescubrimiento de un arte olvidado</h1>
+          <p>Existimos en la intersección entre herencia e innovación, donde la calidez del optimismo de los años 60 se encuentra con la conciencia de la sustentabilidad del 2026. Cada pieza cuenta una historia de artesanía que honra el pasado mientras abraza el futuro.</p>
+          <a href="productos.html" class="btn btn-primary">Descubrí la Colección</a>
+        </div>
       </section>
 
-      <section class="featured" aria-labelledby="featured-title">
-        <h2 id="featured-title">Productos destacados</h2>
+      <section class="featured page-container" aria-labelledby="featured-title">
+        <div class="section-header">
+          <h2 id="featured-title">Piezas Destacadas</h2>
+          <p>Seleccionadas por nuestro equipo de diseño por su carácter y versatilidad.</p>
+        </div>
+        
+        <div id="loading-spinner" class="spinner-container">
+          <div class="spinner"></div>
+          <p>Cargando nuestro catálogo...</p>
+        </div>
+
         <!-- JS: renderizar 3–4 productos destacados -->
-        <div id="featured-products" class="product-grid"></div>
+        <div id="featured-products" class="product-grid" style="display: none;"></div>
       </section>
     </main>
 
