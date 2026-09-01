@@ -145,7 +145,7 @@ img {
   min-height: 80vh;
   padding: 4rem 5%;
   background-color: var(--siena);
-  background-image: linear-gradient(to right, rgba(43, 33, 24, 0.8), rgba(43, 33, 24, 0.4)), url('../img/hero-bg.jpg');
+  background-image: linear-gradient(to right, rgba(43, 33, 24, 0.8), rgba(43, 33, 24, 0.4)), url('../img/Living.jpg');
   background-size: cover;
   background-position: center;
   color: var(--alabastro);
