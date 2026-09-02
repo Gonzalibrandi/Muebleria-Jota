@@ -12,15 +12,38 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Hermanos Jota</h1>
-        <p><!-- TODO: copy del hero --></p>
-        <a href="productos.html" class="btn">Ver catálogo</a>
+        <div class="hero-content">
+          <h1 id="hero-title">El redescubrimiento de un arte olvidado</h1>
+          <p>Existimos en la intersección entre herencia e innovación, donde la calidez del optimismo de los años 60 se encuentra con la conciencia de la sustentabilidad del 2026. Cada pieza cuenta una historia de artesanía que honra el pasado mientras abraza el futuro.</p>
+          <a href="productos.html" class="btn btn-primary">Descubrí la Colección</a>
+        </div>
       </section>
 
-      <section class="featured" aria-labelledby="featured-title">
-        <h2 id="featured-title">Productos destacados</h2>
-        <!-- JS: renderizar 3–4 productos destacados -->
-        <div id="featured-products" class="product-grid"></div>
+      <section class="featured page-container" aria-labelledby="featured-title">
+        <div class="section-header">
+          <h2 id="featured-title">Piezas Destacadas</h2>
+          <p>Seleccionadas por nuestro equipo de diseño por su carácter y versatilidad.</p>
+        </div>
+        
+        <div id="loading-spinner" class="spinner-container">
+          <div class="spinner"></div>
+          <p>Cargando nuestro catálogo...</p>
+        </div>
+
+        <div class="carousel-wrapper" id="carousel-container" style="display: none;">
+          <button class="carousel-btn prev-btn" id="prev-btn" aria-label="Ver anterior">
+            <span class="material-icons">chevron_left</span>
+          </button>
+          
+          <div class="carousel-viewport">
+            <!-- JS: renderizar productos destacados -->
+            <div id="featured-products" class="product-carousel"></div>
+          </div>
+          
+          <button class="carousel-btn next-btn" id="next-btn" aria-label="Ver siguiente">
+            <span class="material-icons">chevron_right</span>
+          </button>
+        </div>
       </section>
     </main>
 
