@@ -30,8 +30,20 @@
           <p>Cargando nuestro catálogo...</p>
         </div>
 
-        <!-- JS: renderizar 3–4 productos destacados -->
-        <div id="featured-products" class="product-grid" style="display: none;"></div>
+        <div class="carousel-wrapper" id="carousel-container" style="display: none;">
+          <button class="carousel-btn prev-btn" id="prev-btn" aria-label="Ver anterior">
+            <span class="material-icons">chevron_left</span>
+          </button>
+          
+          <div class="carousel-viewport">
+            <!-- JS: renderizar productos destacados -->
+            <div id="featured-products" class="product-carousel"></div>
+          </div>
+          
+          <button class="carousel-btn next-btn" id="next-btn" aria-label="Ver siguiente">
+            <span class="material-icons">chevron_right</span>
+          </button>
+        </div>
       </section>
     </main>
 
