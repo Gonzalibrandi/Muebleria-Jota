@@ -19,6 +19,13 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  position: relative;
+}
+
 body {
   margin: 0;
   font-family: var(--fuente-cuerpo);
@@ -300,6 +307,84 @@ img {
   margin: 0 auto;
 }
 
+/* --- Carrusel Destacados --- */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* El wrapper es un bloque normal para evitar bugs de desbordamiento de Flexbox */
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.product-carousel {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+}
+
+.carousel-item {
+  width: 320px;
+  flex: 0 0 auto;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: var(--alabastro);
+  border: 1px solid rgba(160, 82, 45, 0.2);
+  color: var(--siena);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: var(--siena);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carousel-btn .material-icons {
+  font-size: 1.5rem;
+}
+
+.prev-btn { left: -20px; }
+.next-btn { right: -20px; }
+
+@media (max-width: 768px) {
+  .carousel-item {
+    width: 75vw;
+    max-width: 320px;
+  }
+  
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(245, 230, 211, 0.95);
+  }
+  
+  .carousel-btn .material-icons {
+    font-size: 1.2rem;
+  }
+  
+  /* Mantenemos los botones estrictamente dentro de la pantalla para evitar recortes */
+  .prev-btn { left: 5px; }
+  .next-btn { right: 5px; }
+}
+
 .product-card {
   background-color: #fff;
   border-radius: 12px;
@@ -518,7 +603,7 @@ img {
 .contact-section {
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
