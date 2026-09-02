@@ -10,28 +10,80 @@
   <body>
     <header class="site-header"></header>
 
-    <main>
-      <section class="contact" aria-labelledby="contact-title">
-        <h1 id="contact-title">Contacto</h1>
+    <main class="page-container">
+      <section class="contact-section" aria-labelledby="contact-title">
+        <div class="contact-header">
+          <h1 id="contact-title">Hablemos</h1>
+          <p>Estamos aquí para responder tus consultas y asesorarte en tu próxima pieza.</p>
+        </div>
 
-        <form id="contact-form" novalidate>
-          <div>
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required />
+        <div class="contact-grid">
+          <!-- Información de Contacto -->
+          <div class="contact-info">
+            <h2>Nuestra Casa Taller</h2>
+            <p>Visitá nuestro showroom para sentir la calidez de nuestras maderas y descubrir los acabados naturales.</p>
+            
+            <div class="info-group">
+              <span class="material-icons">location_on</span>
+              <div>
+                <strong>Dirección</strong>
+                <p>Av. San Juan 2847, C1232AAB<br>Barrio de San Cristóbal, CABA</p>
+              </div>
+            </div>
+            
+            <div class="info-group">
+              <span class="material-icons">schedule</span>
+              <div>
+                <strong>Horarios</strong>
+                <p>Lunes a Viernes: 10:00 - 19:00<br>Sábados: 10:00 - 14:00</p>
+              </div>
+            </div>
+            
+            <div class="info-group">
+              <span class="material-icons">chat</span>
+              <div>
+                <strong>WhatsApp</strong>
+                <p><a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></p>
+              </div>
+            </div>
+            
+            <div class="info-group">
+              <span class="material-icons">email</span>
+              <div>
+                <strong>Email</strong>
+                <p><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
+              </div>
+            </div>
           </div>
-          <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div>
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn">Enviar</button>
-        </form>
 
-        <!-- JS: mensaje de éxito / errores de validación -->
-        <div id="form-feedback" role="status" aria-live="polite"></div>
+          <!-- Formulario -->
+          <div class="contact-form-container">
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+                <span class="error-msg" id="error-nombre"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+                <span class="error-msg" id="error-email"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                <span class="error-msg" id="error-mensaje"></span>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            </form>
+
+            <!-- Feedback -->
+            <div id="form-feedback" role="status" aria-live="polite"></div>
+          </div>
+        </div>
       </section>
     </main>
 
