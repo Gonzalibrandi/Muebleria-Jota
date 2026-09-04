@@ -24,7 +24,7 @@ function renderizarDestacados(productos) {
         <div class="image-wrapper">
           <img src="${prod.imagen}" alt="${prod.nombre}" class="product-image" loading="lazy">
           <div class="product-overlay">
-            <button class="add-to-cart-btn" aria-label="Agregar al carrito" title="Agregar al carrito" onclick="console.log('Añadir al carrito: ${prod.id}')">
+            <button class="add-to-cart-btn" data-id="${prod.id}" aria-label="Agregar al carrito" title="Agregar al carrito">
               <span class="material-icons">shopping_cart</span>
             </button>
           </div>

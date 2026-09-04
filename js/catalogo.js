@@ -21,7 +21,7 @@ function crearTarjetaProducto(producto) {
     <div class="image-wrapper">
       <img src="${producto.imagen}" alt="${producto.nombre}" class="product-image" loading="lazy">
       <div class="product-overlay">
-        <button class="add-to-cart-btn" aria-label="Agregar al carrito" title="Agregar al carrito">
+        <button class="add-to-cart-btn" data-id="${producto.id}" aria-label="Agregar al carrito" title="Agregar al carrito">
           <span class="material-icons">shopping_cart</span>
         </button>
       </div>

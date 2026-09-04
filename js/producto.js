@@ -107,8 +107,9 @@ function renderizarDetalle(producto) {
 }
 
 function agregarAlCarrito(producto) {
-  // TODO: incrementar contador y persistir
-  console.log("Añadido al carrito:", producto.nombre);
+  if (typeof addToCart === "function" && producto) {
+    addToCart(producto.id, 1);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
