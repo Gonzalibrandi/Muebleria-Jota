@@ -1,5 +1,7 @@
 /* Página de inicio: 3–4 productos destacados en carrusel */
 
+/* Hice cambios e unifique los codigos del Hero*/
+
 function formatMoney(amount) {
   return new Intl.NumberFormat('es-AR', {
     style: 'currency',
@@ -39,7 +41,7 @@ function renderizarDestacados(productos) {
   contenedor.innerHTML = html;
 }
 
-function inicializarCarrusel() {
+function inicializarCarruselDestacados() {
   const track = document.getElementById('featured-products');
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
@@ -62,17 +64,12 @@ function inicializarCarrusel() {
     
     const itemWidth = getScrollAmount();
 
-    // 1. Movemos el último elemento al principio
     track.prepend(track.lastElementChild);
-    
-    // 2. Desactivamos transición y ajustamos la posición para esconder el salto
     track.style.transition = 'none';
     track.style.transform = `translateX(-${itemWidth}px)`;
     
-    // 3. Forzamos un reflow
-    track.offsetHeight;
+    track.offsetHeight; // Reflow
     
-    // 4. Activamos transición y deslizamos a 0
     track.style.transition = `transform ${TRANSITION_MS}ms ease-out`;
     track.style.transform = 'translateX(0)';
 
@@ -87,16 +84,12 @@ function inicializarCarrusel() {
     
     const itemWidth = getScrollAmount();
 
-    // 1. Deslizamos todo hacia la izquierda
     track.style.transition = `transform ${TRANSITION_MS}ms ease-out`;
     track.style.transform = `translateX(-${itemWidth}px)`;
 
     setTimeout(() => {
-      // 2. Cuando termina, apagamos transición y movemos el nodo al fondo
       track.style.transition = 'none';
       track.appendChild(track.firstElementChild);
-      
-      // 3. Reseteamos el transform a 0 invisiblemente
       track.style.transform = 'translateX(0)';
       
       isMoving = false;
@@ -104,7 +97,48 @@ function inicializarCarrusel() {
   });
 }
 
+/* Carrusel de Fondo / Hero */
+function inicializarHeroSlider() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.dot');
+  
+  if (!slides.length) return;
+  
+  let currentSlide = 0;
+  const slideInterval = 3000; // Configurado a 3 segundos
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    if (slides[index]) slides[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  let timer = setInterval(nextSlide, slideInterval);
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentSlide = index;
+      showSlide(currentSlide);
+      
+      clearInterval(timer);
+      timer = setInterval(nextSlide, slideInterval);
+    });
+  });
+}
+
+/* Inicialización General */
 document.addEventListener("DOMContentLoaded", async () => {
+  // 1. Inicializar el slider de fondo del Hero
+  inicializarHeroSlider();
+
+  // 2. Cargar y renderizar productos destacados
   const spinner = document.getElementById("loading-spinner");
   const carouselContainer = document.getElementById("carousel-container");
   
@@ -114,8 +148,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     if (carouselContainer) {
       renderizarDestacados(productos);
-      carouselContainer.style.display = 'flex'; // Mostrar contenedor
-      inicializarCarrusel();
+      carouselContainer.style.display = 'flex';
+      inicializarCarruselDestacados();
     }
   } catch (error) {
     console.error("Error al cargar productos destacados:", error);
