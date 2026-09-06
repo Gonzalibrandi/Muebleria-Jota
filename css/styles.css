@@ -240,12 +240,14 @@ img {
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(2.2rem, 8vw, 5rem);
   color: var(--alabastro);
   margin-top: 0;
   margin-bottom: 1.5rem;
   line-height: 1.1;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero p {
@@ -392,18 +394,74 @@ img {
   padding: 1rem 0;
 }
 
+/* Desktop: Grilla de 4 columnas */
 .product-carousel {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  width: max-content;
+  width: 100%;
 }
 
 .carousel-item {
-  width: 320px;
-  flex: 0 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .carousel-viewport {
+    max-width: 672px; /* 2 items de 320px + gap de 32px */
+    margin: 0 auto;
+  }
+
+  .product-carousel {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+  }
+  
+  .carousel-item {
+    width: 320px;
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 699px) {
+  .carousel-viewport {
+    max-width: 320px; /* 1 item */
+  }
+
+  .product-carousel {
+    gap: 2rem;
+  }
+  
+  .carousel-item {
+    width: 320px;
+  }
+}
+
+@media (max-width: 425px) {
+  .carousel-viewport {
+    max-width: calc(100vw - 3rem); 
+  }
+  
+  .carousel-item {
+    width: calc(100vw - 3rem);
+  }
+
+  .carousel-btn {
+    width: clamp(24px, 8vw, 36px);
+    height: clamp(24px, 8vw, 36px);
+  }
+
+  .carousel-btn .material-icons {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+
+  .prev-btn { left: 0px; }
+  .next-btn { right: 0px; }
 }
 
 .carousel-btn {
+  display: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -414,11 +472,16 @@ img {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 1023px) {
+  .carousel-btn {
+    display: flex;
+  }
 }
 
 .carousel-btn:hover {
@@ -434,26 +497,6 @@ img {
 .prev-btn { left: -20px; }
 .next-btn { right: -20px; }
 
-@media (max-width: 768px) {
-  .carousel-item {
-    width: 75vw;
-    max-width: 320px;
-  }
-  
-  .carousel-btn {
-    width: 36px;
-    height: 36px;
-    background-color: rgba(245, 230, 211, 0.95);
-  }
-  
-  .carousel-btn .material-icons {
-    font-size: 1.2rem;
-  }
-  
-  /* Mantenemos los botones estrictamente dentro de la pantalla para evitar recortes */
-  .prev-btn { left: 5px; }
-  .next-btn { right: 5px; }
-}
 
 .product-card {
   background-color: #fff;

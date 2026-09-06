@@ -51,20 +51,23 @@ function inicializarCarruselDestacados() {
   let isMoving = false;
   const TRANSITION_MS = 400;
 
-  function getScrollAmount() {
+  function getScrollAmount(itemsToScroll) {
     const card = track.firstElementChild;
     if (!card) return 320;
     const gap = parseInt(window.getComputedStyle(track).gap) || 32;
-    return card.offsetWidth + gap;
+    return (card.offsetWidth + gap) * itemsToScroll;
   }
 
   prevBtn.addEventListener('click', () => {
-    if (isMoving) return;
+    if (isMoving || window.innerWidth >= 1024) return;
     isMoving = true;
     
-    const itemWidth = getScrollAmount();
+    const itemsToScroll = window.innerWidth >= 700 ? 2 : 1;
+    const itemWidth = getScrollAmount(itemsToScroll);
 
-    track.prepend(track.lastElementChild);
+    for (let i = 0; i < itemsToScroll; i++) {
+      track.prepend(track.lastElementChild);
+    }
     track.style.transition = 'none';
     track.style.transform = `translateX(-${itemWidth}px)`;
     
@@ -79,17 +82,20 @@ function inicializarCarruselDestacados() {
   });
 
   nextBtn.addEventListener('click', () => {
-    if (isMoving) return;
+    if (isMoving || window.innerWidth >= 1024) return;
     isMoving = true;
     
-    const itemWidth = getScrollAmount();
+    const itemsToScroll = window.innerWidth >= 700 ? 2 : 1;
+    const itemWidth = getScrollAmount(itemsToScroll);
 
     track.style.transition = `transform ${TRANSITION_MS}ms ease-out`;
     track.style.transform = `translateX(-${itemWidth}px)`;
 
     setTimeout(() => {
       track.style.transition = 'none';
-      track.appendChild(track.firstElementChild);
+      for (let i = 0; i < itemsToScroll; i++) {
+        track.appendChild(track.firstElementChild);
+      }
       track.style.transform = 'translateX(0)';
       
       isMoving = false;

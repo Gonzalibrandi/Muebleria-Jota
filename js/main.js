@@ -374,12 +374,7 @@ function inicializarEventosCarrito() {
 
 /** Simula una petición asíncrona al catálogo local */
 async function cargarProductos() {
-  return new Promise((resolve) => {
-    // Simular un retraso de red de 1.5 segundos
-    setTimeout(() => {
-      resolve(obtenerProductos());
-    }, 1500);
-  });
+  return obtenerProductos();
 }
 
 function paginaActual() {
