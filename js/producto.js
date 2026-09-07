@@ -106,23 +106,10 @@ function renderizarDetalle(producto) {
   });
 }
 
-function agregarAlCarrito(producto) {
-  if (typeof addToCart === "function" && producto) {
-    addToCart(producto.id, 1);
-  }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const productos = obtenerProductos();
   const id = obtenerIdDesdeURL() || 1; // Default a 1 para poder testear fácilmente
   const producto = productos.find((p) => p.id === id);
   
   renderizarDetalle(producto);
-
-  const btnBuy = document.querySelector(".pd-buy-btn");
-  if (btnBuy) {
-    btnBuy.addEventListener("click", () => {
-      agregarAlCarrito(producto);
-    });
-  }
 });
